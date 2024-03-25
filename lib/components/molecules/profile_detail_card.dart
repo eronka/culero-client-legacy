@@ -5,8 +5,8 @@ import 'package:culero_client/components/atoms/card/active_card.dart';
 import 'package:culero_client/utils/color.dart';
 import 'package:culero_client/utils/font_size.dart';
 
-import 'text/body_text.dart';
-import 'text/heading_text.dart';
+import '../atoms/text/body_text.dart';
+import '../atoms/text/heading_text.dart';
 
 class ProfileDetailCard extends StatelessWidget {
   final Map<String, String> data;

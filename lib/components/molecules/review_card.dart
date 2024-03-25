@@ -5,7 +5,7 @@ import 'package:culero_client/components/atoms/text/body_text.dart';
 import 'package:culero_client/utils/color.dart';
 import 'package:culero_client/utils/font_size.dart';
 
-import 'text/heading_text.dart';
+import '../atoms/text/heading_text.dart';
 
 class ReviewCard extends StatelessWidget {
   final Map<String, dynamic> data;

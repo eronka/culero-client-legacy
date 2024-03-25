@@ -16,7 +16,7 @@ final router = GoRouter(
     GoRoute(
       name: 'landing_page',
       path: '/',
-      builder: (context, state) => const LandingPage(),
+      builder: (context, state) => const ComponentPage(),
     ),
     GoRoute(
       name: 'sign_up',

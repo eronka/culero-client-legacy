@@ -1,6 +1,7 @@
+import 'package:culero_client/components/atoms/buttons/active_button.dart';
 import 'package:flutter/material.dart';
-import 'package:culero_client/components/atoms/latest_review_item.dart';
-import 'package:culero_client/components/atoms/need_review_tile.dart';
+import 'package:culero_client/components/molecules/latest_review_item.dart';
+import 'package:culero_client/components/molecules/need_review_tile.dart';
 import 'package:culero_client/components/atoms/text/body_text.dart';
 import 'package:culero_client/components/atoms/text/heading_text.dart';
 import 'package:culero_client/components/atoms/text_field/primary_text_form_field.dart';
@@ -8,12 +9,12 @@ import 'package:culero_client/components/atoms/text_field/search_text_field.dart
 import 'package:culero_client/components/atoms/buttons/primary_button.dart';
 import 'package:culero_client/components/atoms/buttons/secondary_button.dart';
 import 'package:culero_client/components/atoms/card/primary_card.dart';
-import 'package:culero_client/components/atoms/connection_list_tile.dart';
+import 'package:culero_client/components/molecules/connection_list_tile.dart';
 import 'package:culero_client/components/atoms/indicator/indicator.dart';
-import 'package:culero_client/components/atoms/profile_detail_card.dart';
-import 'package:culero_client/components/atoms/review_card.dart';
-import 'package:culero_client/components/atoms/rating_card.dart';
-import 'package:culero_client/components/atoms/my_review_card.dart';
+import 'package:culero_client/components/molecules/profile_detail_card.dart';
+import 'package:culero_client/components/molecules/review_card.dart';
+import 'package:culero_client/components/molecules/rating_card.dart';
+import 'package:culero_client/components/molecules/my_review_card.dart';
 import 'package:culero_client/utils/color.dart';
 import 'package:culero_client/utils/font_size.dart';
 
@@ -21,7 +22,7 @@ final controller = TextEditingController();
 final controller2 = TextEditingController();
 
 class ComponentPage extends StatelessWidget {
-  const ComponentPage({Key? key}) : super(key: key);
+  const ComponentPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -34,9 +35,29 @@ class ComponentPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               // My Review
-              const Row(
+              Row(
                 children: [
-                  SizedBox(
+                  Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: ElevatedButton(onPressed: () {}, child: const Text("t")),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: FilledButton(onPressed: () {}, child: const Text("f")),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: OutlinedButton(onPressed: () {}, child: const Text("bvbn")),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: TextButton(onPressed: () {}, child: const Text("Helo")),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
                     width: 518,
                     child: Column(
                       children: [
@@ -75,7 +96,7 @@ class ComponentPage extends StatelessWidget {
                       ],
                     ),
                   ),
-                  LatestReviewItem(data: {
+                  const LatestReviewItem(data: {
                     "avatar": "https://avatars.githubusercontent.com/u/58112334?v=4",
                     "name": "Noah Smith",
                     "star_rating": 5,
