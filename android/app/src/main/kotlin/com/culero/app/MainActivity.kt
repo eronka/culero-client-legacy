@@ -1,4 +1,4 @@
-package com.example.culero
+package com.culero.app
 
 import io.flutter.embedding.android.FlutterActivity
 
