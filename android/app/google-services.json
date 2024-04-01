@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1044491487797",
+    "project_id": "culero-407005",
+    "storage_bucket": "culero-407005.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1044491487797:android:787e9a2d5cc39a0b48bf7c",
+        "android_client_info": {
+          "package_name": "com.culero.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1044491487797-iu6gkav7vtunq9a6l432tvufgv5eqoch.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC65FPTKwDVIzxy-BYK3kGl-20EpRV4OsA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1044491487797-iu6gkav7vtunq9a6l432tvufgv5eqoch.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
