@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:culero_client/utils/color.dart';
+import 'package:culero/utils/color.dart';
 
 class SecondaryCard extends StatelessWidget {
   final Widget child;
@@ -10,7 +10,7 @@ class SecondaryCard extends StatelessWidget {
   final Color? borderColor;
   final Color? color;
   const SecondaryCard({
-    Key? key,
+    super.key,
     required this.child,
     this.padding = const EdgeInsets.all(8),
     this.border = true,
@@ -18,7 +18,7 @@ class SecondaryCard extends StatelessWidget {
     this.width,
     this.borderColor,
     this.color,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

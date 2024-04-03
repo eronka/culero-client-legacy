@@ -1,77 +1,35 @@
-import 'package:culero_client/components/atoms/buttons/button_config.dart';
+import 'firebase_options.dart';
+import 'app/navigation/router_config.dart';
+import 'app/resources/app_theme.dart';
+
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:culero_client/utils/color.dart';
-import 'package:culero_client/utils/route.dart';
-import 'package:google_fonts/google_fonts.dart';
 
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
 
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
-void main() {
-  runApp(const MyApp());
+  runApp(
+    const ProviderScope(
+      child: MyApp(),
+    ),
+  );
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final router = ref.watch(routerConfigProvider);
     return MaterialApp.router(
-      routerConfig: router,
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        useMaterial3: true,
-        colorScheme: ColorScheme.fromSeed(
-          brightness: MediaQuery.platformBrightnessOf(context),
-          seedColor: const Color(0xFF2798EA),
-        ),
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-        textTheme: GoogleFonts.interTextTheme(),
-        filledButtonTheme: FilledButtonThemeData(
-          style: FilledButton.styleFrom(
-            foregroundColor: Colors.white,
-            backgroundColor: const Color(0xFF2798EA),
-            minimumSize: const Size.fromHeight(50),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(ButtonRadius.medium),
-            ),
-            elevation: 0,
-          ),
-        ),
-        elevatedButtonTheme: ElevatedButtonThemeData(
-            style: ElevatedButton.styleFrom(
-          backgroundColor: primaryBg,
-          foregroundColor: Colors.black,
-          minimumSize: const Size.fromHeight(50),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(ButtonRadius.medium),
-          ),
-          elevation: 0,
-        )),
-        outlinedButtonTheme: OutlinedButtonThemeData(
-          style: OutlinedButton.styleFrom(
-            minimumSize: const Size.fromHeight(50),
-            foregroundColor: Colors.black,
-            backgroundColor: Colors.transparent,
-            side: const BorderSide(color: primaryBg),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(ButtonRadius.medium),
-            ),
-            elevation: 0,
-          ),
-        ),
-        textButtonTheme: TextButtonThemeData(
-          style: TextButton.styleFrom(
-            minimumSize: const Size.fromHeight(50),
-            foregroundColor: Colors.black,
-            backgroundColor: Colors.transparent,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(ButtonRadius.medium),
-            ),
-            elevation: 0,
-          ),
-        ),
-      ),
       title: 'Culero',
+      theme: appTheme,
+      routerConfig: router,
     );
   }
 }

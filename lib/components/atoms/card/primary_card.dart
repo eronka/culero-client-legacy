@@ -1,17 +1,17 @@
 
 import 'package:flutter/material.dart';
-import 'package:culero_client/utils/color.dart';
+import 'package:culero/utils/color.dart';
 
 class PrimaryCard extends StatelessWidget {
   final Widget child;
   final EdgeInsets padding;
   final bool border;
   const PrimaryCard({
-    Key? key,
+    super.key,
     required this.child,
     this.padding = const EdgeInsets.all(8),
     this.border = true,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

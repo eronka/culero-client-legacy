@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:culero_client/components/atoms/buttons/button_config.dart';
-import 'package:culero_client/components/atoms/buttons/primary_button.dart';
-import 'package:culero_client/components/atoms/card/active_card.dart';
-import 'package:culero_client/utils/color.dart';
-import 'package:culero_client/utils/font_size.dart';
+import 'package:culero/components/atoms/buttons/button_config.dart';
+import 'package:culero/components/atoms/buttons/primary_button.dart';
+import 'package:culero/components/atoms/card/active_card.dart';
+import 'package:culero/utils/color.dart';
+import 'package:culero/utils/font_size.dart';
 
 import '../atoms/text/body_text.dart';
 import '../atoms/text/heading_text.dart';
@@ -11,9 +11,9 @@ import '../atoms/text/heading_text.dart';
 class ProfileDetailCard extends StatelessWidget {
   final Map<String, String> data;
   const ProfileDetailCard({
-    Key? key,
+    super.key,
     required this.data,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

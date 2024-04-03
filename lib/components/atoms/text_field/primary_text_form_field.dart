@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:culero_client/utils/color.dart';
-import 'package:culero_client/utils/font_size.dart';
+import 'package:culero/utils/color.dart';
+import 'package:culero/utils/font_size.dart';
 
 class PrimaryTextFormField extends StatelessWidget {
   final TextEditingController? controller;
@@ -13,7 +13,7 @@ final int? maxLength ;
   final TextInputType keyboardType;
 
   const PrimaryTextFormField({
-    Key? key,
+    super.key,
     required this.hintText,
     required this.onChanged,
      this.controller,
@@ -22,7 +22,7 @@ final int? maxLength ;
     this.validator,
     this.keyboardType = TextInputType.text,
     this.maxLength,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

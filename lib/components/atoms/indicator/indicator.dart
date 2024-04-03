@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:culero_client/utils/color.dart';
+import 'package:culero/utils/color.dart';
 
 class Indicator extends StatelessWidget {
   final double? value;
@@ -8,13 +8,13 @@ class Indicator extends StatelessWidget {
   final double? height;
   final BorderRadius borderRadius;
   const Indicator({
-    Key? key,
+    super.key,
     this.color = primaryBg,
     this.backgroundColor= Colors.white,
     this.height,
     this.value,
     this.borderRadius = const BorderRadius.all(Radius.circular(25)),
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

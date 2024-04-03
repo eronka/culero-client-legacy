@@ -1,14 +1,14 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:culero_client/components/atoms/buttons/primary_button.dart';
-import 'package:culero_client/components/atoms/buttons/secondary_button.dart';
-import 'package:culero_client/components/atoms/text/body_text.dart';
-import 'package:culero_client/components/atoms/text/heading_text.dart';
-import 'package:culero_client/components/atoms/text_field/primary_text_form_field.dart';
-import 'package:culero_client/utils/color.dart';
-import 'package:culero_client/utils/font_size.dart';
-import 'package:culero_client/utils/screen_sizes.dart';
+import 'package:culero/components/atoms/buttons/primary_button.dart';
+import 'package:culero/components/atoms/buttons/secondary_button.dart';
+import 'package:culero/components/atoms/text/body_text.dart';
+import 'package:culero/components/atoms/text/heading_text.dart';
+import 'package:culero/components/atoms/text_field/primary_text_form_field.dart';
+import 'package:culero/utils/color.dart';
+import 'package:culero/utils/font_size.dart';
+import 'package:culero/utils/screen_sizes.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
@@ -18,7 +18,7 @@ import 'package:colorful_iconify_flutter/icons/flat_color_icons.dart';
 final TextEditingController controller = TextEditingController();
 
 class MoreOptions extends StatelessWidget {
-  const MoreOptions({Key? key}) : super(key: key);
+  const MoreOptions({super.key});
 
   @override
   Widget build(BuildContext context) {

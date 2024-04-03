@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:culero_client/utils/const.dart';
+import 'package:culero/utils/const.dart';
 
 bool isMobile(MediaQueryData mediaQueryData) {
   return mediaQueryData.size.width < mobile;

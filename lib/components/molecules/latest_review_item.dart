@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:culero_client/components/atoms/text/heading_text.dart';
-import 'package:culero_client/utils/color.dart';
-import 'package:culero_client/utils/font_size.dart';
+import 'package:culero/components/atoms/text/heading_text.dart';
+import 'package:culero/utils/color.dart';
+import 'package:culero/utils/font_size.dart';
 
 class LatestReviewItem extends StatelessWidget {
   final Map<String, dynamic> data;
-  const LatestReviewItem({Key? key, required this.data}) : super(key: key);
+  const LatestReviewItem({super.key, required this.data});
 
   @override
   Widget build(BuildContext context) {

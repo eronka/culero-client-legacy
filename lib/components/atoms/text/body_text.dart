@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:culero_client/utils/color.dart';
-import 'package:culero_client/utils/font_size.dart';
+import 'package:culero/utils/color.dart';
+import 'package:culero/utils/font_size.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class BodyText extends StatelessWidget {
@@ -11,14 +11,14 @@ class BodyText extends StatelessWidget {
   final FontStyle fontStyle;
   final TextAlign textAlign;
   const BodyText({
-    Key? key,
+    super.key,
     required this.text,
     this.fontColor = bodyText1,
     this.fontSize = FontSizes.p1,
     this.fontWeight = FontWeight.normal,
     this.fontStyle = FontStyle.normal,
     this.textAlign =TextAlign.justify,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:culero_client/utils/color.dart';
-import 'package:culero_client/utils/font_size.dart';
+import 'package:culero/utils/color.dart';
+import 'package:culero/utils/font_size.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HeadingText extends StatelessWidget {
@@ -11,14 +11,14 @@ class HeadingText extends StatelessWidget {
   final FontStyle fontStyle;
   final TextAlign textAlign;
   const HeadingText({
-    Key? key,
+    super.key,
     required this.text,
     this.fontColor = textColor,
     this.fontSize = FontSizes.h3,
     this.fontWeight = FontWeight.w600,
     this.fontStyle = FontStyle.normal,
     this.textAlign = TextAlign.justify,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

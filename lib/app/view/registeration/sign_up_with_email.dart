@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:culero_client/components/atoms/buttons/primary_button.dart';
-import 'package:culero_client/components/atoms/buttons/secondary_button.dart';
-import 'package:culero_client/components/atoms/indicator/indicator.dart';
-import 'package:culero_client/components/atoms/text/body_text.dart';
-import 'package:culero_client/components/atoms/text/heading_text.dart';
-import 'package:culero_client/components/atoms/text_field/primary_text_form_field.dart';
-import 'package:culero_client/utils/color.dart';
-import 'package:culero_client/utils/font_size.dart';
-import 'package:culero_client/utils/screen_sizes.dart';
+import 'package:culero/components/atoms/buttons/primary_button.dart';
+import 'package:culero/components/atoms/buttons/secondary_button.dart';
+import 'package:culero/components/atoms/indicator/indicator.dart';
+import 'package:culero/components/atoms/text/body_text.dart';
+import 'package:culero/components/atoms/text/heading_text.dart';
+import 'package:culero/components/atoms/text_field/primary_text_form_field.dart';
+import 'package:culero/utils/color.dart';
+import 'package:culero/utils/font_size.dart';
+import 'package:culero/utils/screen_sizes.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
@@ -20,14 +20,14 @@ import 'package:colorful_iconify_flutter/icons/flat_color_icons.dart';
 final TextEditingController controllerEmail = TextEditingController();
 final TextEditingController controllerPass = TextEditingController();
 
-class CreateYourAccountEmail extends StatefulWidget {
-  const CreateYourAccountEmail({Key? key}) : super(key: key);
+class SignUpWithEmail extends StatefulWidget {
+  const SignUpWithEmail({super.key});
 
   @override
-  State<CreateYourAccountEmail> createState() => _CreateYourAccountEmailState();
+  State<SignUpWithEmail> createState() => _SignUpWithEmailState();
 }
 
-class _CreateYourAccountEmailState extends State<CreateYourAccountEmail> {
+class _SignUpWithEmailState extends State<SignUpWithEmail> {
   final TextEditingController controllerEmail = TextEditingController();
   final TextEditingController controllerPass = TextEditingController();
   final _formKey = GlobalKey<FormState>();

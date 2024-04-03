@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:culero_client/components/atoms/text/heading_text.dart';
-import 'package:culero_client/components/atoms/card/secondary_card.dart';
-import 'package:culero_client/components/atoms/indicator/indicator.dart';
-import 'package:culero_client/utils/color.dart';
-import 'package:culero_client/utils/font_size.dart';
+import 'package:culero/components/atoms/text/heading_text.dart';
+import 'package:culero/components/atoms/card/secondary_card.dart';
+import 'package:culero/components/atoms/indicator/indicator.dart';
+import 'package:culero/utils/color.dart';
+import 'package:culero/utils/font_size.dart';
 
 // "over_all": 4.6,
 // "Professionalism": 4.4,
@@ -13,7 +13,7 @@ import 'package:culero_client/utils/font_size.dart';
 
 class RatingCard extends StatelessWidget {
   final Map<String, double> data;
-  const RatingCard({Key? key, required this.data}) : super(key: key);
+  const RatingCard({super.key, required this.data});
 
   @override
   Widget build(BuildContext context) {

@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:culero_client/components/atoms/card/secondary_card.dart';
-import 'package:culero_client/components/atoms/text/body_text.dart';
-import 'package:culero_client/utils/color.dart';
-import 'package:culero_client/utils/font_size.dart';
+import 'package:culero/components/atoms/card/secondary_card.dart';
+import 'package:culero/components/atoms/text/body_text.dart';
+import 'package:culero/utils/color.dart';
+import 'package:culero/utils/font_size.dart';
 
 import '../atoms/text/heading_text.dart';
 
 class ReviewCard extends StatelessWidget {
   final Map<String, dynamic> data;
 
-  const ReviewCard({Key? key, required this.data}) : super(key: key);
+  const ReviewCard({super.key, required this.data});
 
   @override
   Widget build(BuildContext context) {

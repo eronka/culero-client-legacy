@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:culero_client/utils/color.dart';
-import 'package:culero_client/utils/font_size.dart';
+import 'package:culero/utils/color.dart';
+import 'package:culero/utils/font_size.dart';
 
 
 class SearchTextField extends StatelessWidget {
@@ -14,7 +14,7 @@ class SearchTextField extends StatelessWidget {
   final Iterable<Widget>? trailing;
 
   const SearchTextField({
-    Key? key,
+    super.key,
     required this.controller,
     required this.hintText,
     this.backgroundColor = searchTextFieldBgColor,
@@ -23,7 +23,7 @@ class SearchTextField extends StatelessWidget {
     this.onSubmitted,
     this.onSuffixTap,
     this.trailing,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:culero_client/components/atoms/buttons/button_config.dart';
-import 'package:culero_client/components/atoms/card/secondary_card.dart';
-import 'package:culero_client/components/atoms/indicator/indicator.dart';
-import 'package:culero_client/components/atoms/text/body_text.dart';
-import 'package:culero_client/components/atoms/text/heading_text.dart';
-import 'package:culero_client/components/atoms/text_field/search_text_field.dart';
-import 'package:culero_client/components/atoms/buttons/active_button.dart';
-import 'package:culero_client/components/atoms/buttons/text_button.dart';
-import 'package:culero_client/utils/color.dart';
-import 'package:culero_client/utils/font_size.dart';
+import 'package:culero/components/atoms/buttons/button_config.dart';
+import 'package:culero/components/atoms/card/secondary_card.dart';
+import 'package:culero/components/atoms/indicator/indicator.dart';
+import 'package:culero/components/atoms/text/body_text.dart';
+import 'package:culero/components/atoms/text/heading_text.dart';
+import 'package:culero/components/atoms/text_field/search_text_field.dart';
+import 'package:culero/components/atoms/buttons/active_button.dart';
+import 'package:culero/components/atoms/buttons/text_button.dart';
+import 'package:culero/utils/color.dart';
+import 'package:culero/utils/font_size.dart';
 import 'package:go_router/go_router.dart';
 
 final _controller = TextEditingController();
 
-class LandingPage extends StatelessWidget {
-  const LandingPage({Key? key}) : super(key: key);
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
