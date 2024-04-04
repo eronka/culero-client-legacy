@@ -67,12 +67,12 @@ class ReviewCard extends StatelessWidget {
                           Row(
                             children: List.generate(
                               data['star_rating'],
-                              (index) => const Padding(
+                              (index) =>  Padding(
                                 padding: EdgeInsets.all(2.0),
                                 child: Icon(
                                   Icons.star_rate,
                                   size: 16,
-                                  color: primaryBg,
+                                  color: Theme.of(context).colorScheme.primary,
                                 ),
                               ),
                             ),

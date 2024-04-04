@@ -1,3 +1,5 @@
+import 'package:culero/app/navigation/app_routes.dart';
+import 'package:culero/components/atoms/buttons/primary_button.dart';
 import 'package:flutter/material.dart';
 import 'package:culero/components/atoms/buttons/button_config.dart';
 import 'package:culero/components/atoms/card/secondary_card.dart';
@@ -30,11 +32,11 @@ class HomePage extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    const Flexible(
+                     Flexible(
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          HeadingText(text: "CULERO", fontColor: secondaryBg),
+                          HeadingText(text: "CULERO", fontColor: Theme.of(context).colorScheme.primary),
                         ],
                       ),
                     ),
@@ -51,10 +53,10 @@ class HomePage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           TextButtonAtm(
-                            onPressed: () => context.go("/signup"),
+                            onPressed: () => context.go(AppRoute.signup.path),
                             text: "Sign in/Sign up",
                           ),
-                          ActiveButton(text: "Write Review", onPressed: () {})
+                          PrimaryButton(text: "Write Review", onPressed: () {})
                         ],
                       ),
                     ),
@@ -95,20 +97,20 @@ class HomePage extends StatelessWidget {
                               padding: EdgeInsets.symmetric(vertical: 8),
                               child: HeadingText(text: "Welcome to Culero", fontColor: Colors.grey, fontSize: FontSizes.h1),
                             ),
-                            const HeadingText(text: "Review, Reflect, Connect.", fontColor: secondaryBg, fontSize: 48),
+                             HeadingText(text: "Review, Reflect, Connect.", fontColor: Theme.of(context).colorScheme.primary, fontSize: 48),
                             const Padding(
                               padding: EdgeInsets.symmetric(vertical: 30),
                               child: BodyText(text: "The new approach to bottom up management.", fontColor: bodyText1, fontSize: FontSizes.h2),
                             ),
                             Padding(
                               padding: const EdgeInsets.symmetric(vertical: 30),
-                              child: ActiveButton(text: "Get started today", onPressed: () {}, size: ButtonSize.lg, width: 430),
+                              child: PrimaryButton(text: "Get started today", onPressed: () {}, size: ButtonSize.lg, width: 430),
                             ),
                             const Padding(
                               padding: EdgeInsets.only(top: 40),
                               child: BodyText(text: "Have an account already? ", fontSize: FontSizes.p1),
                             ),
-                            const BodyText(text: "Sign in", fontColor: secondaryBg, fontSize: FontSizes.p1)
+                             BodyText(text: "Sign in", fontColor: Theme.of(context).colorScheme.primary, fontSize: FontSizes.p1)
                           ],
                         ),
                       ),
@@ -234,9 +236,9 @@ class HomePage extends StatelessWidget {
                                                     mainAxisAlignment: MainAxisAlignment.center,
                                                     children: List.generate(
                                                       5,
-                                                      (index) => const Padding(
-                                                        padding: EdgeInsets.all(2.0),
-                                                        child: Icon(Icons.star_rate, color: primaryBg, size: 12),
+                                                      (index) =>  Padding(
+                                                        padding: const EdgeInsets.all(2.0),
+                                                        child: Icon(Icons.star_rate, color: Theme.of(context).colorScheme.primary, size: 12),
                                                       ),
                                                     ),
                                                   ),

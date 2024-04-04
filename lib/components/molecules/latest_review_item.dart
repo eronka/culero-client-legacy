@@ -1,3 +1,4 @@
+import 'package:culero/app/resources/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:culero/components/atoms/text/heading_text.dart';
 import 'package:culero/utils/color.dart';
@@ -22,7 +23,7 @@ class LatestReviewItem extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              IconButton(onPressed: () {}, icon: const Icon(Icons.more_horiz, color: bgColor)),
+              IconButton(onPressed: () {}, icon: const Icon(Icons.more_horiz, color: AppColor.neutral)),
             ],
           ),
           Padding(
@@ -37,9 +38,9 @@ class LatestReviewItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: List.generate(
               data['star_rating'],
-              (index) => const Padding(
+              (index) =>  Padding(
                 padding: EdgeInsets.all(2.0),
-                child: Icon(Icons.star_rate, color: primaryBg),
+                child: Icon(Icons.star_rate, color: Theme.of(context).colorScheme.primary),
               ),
             ),
           ),

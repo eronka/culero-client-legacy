@@ -1,4 +1,6 @@
+import 'package:culero/app/resources/app_colors.dart';
 import 'package:culero/components/atoms/buttons/active_button.dart';
+import 'package:culero/components/atoms/buttons/text_button.dart';
 import 'package:flutter/material.dart';
 import 'package:culero/components/molecules/latest_review_item.dart';
 import 'package:culero/components/molecules/need_review_tile.dart';
@@ -27,37 +29,44 @@ class ComponentPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: bgColor,
+      backgroundColor: Colors.grey.l1,
       body: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsets.all(8.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              // My Review
-              Row(
-                children: [
-                  Column(
+              Row(children: [
+
+                Flexible(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: ElevatedButton(onPressed: () {}, child: const Text("t")),
+                        child: PrimaryButton(text: "Primary Button", onPressed: () {}),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: FilledButton(onPressed: () {}, child: const Text("f")),
+                        child: SecondaryButton(text: "Secondary Button", onPressed: () {}),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: OutlinedButton(onPressed: () {}, child: const Text("bvbn")),
+                        child: ActiveButton(text: "Active Button", onPressed: () {}),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: TextButton(onPressed: () {}, child: const Text("Helo")),
+                        child: TextButtonAtm(text: "Text Button", onPressed: () {}),
                       ),
                     ],
                   ),
-                  const SizedBox(
+                )
+              ]),
+
+              // My Review
+              const Row(
+                children: [
+                  SizedBox(
                     width: 518,
                     child: Column(
                       children: [
@@ -96,7 +105,7 @@ class ComponentPage extends StatelessWidget {
                       ],
                     ),
                   ),
-                  const LatestReviewItem(data: {
+                  LatestReviewItem(data: {
                     "avatar": "https://avatars.githubusercontent.com/u/58112334?v=4",
                     "name": "Noah Smith",
                     "star_rating": 5,

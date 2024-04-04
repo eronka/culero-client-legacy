@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:culero/components/atoms/buttons/button_config.dart';
 import 'package:culero/components/atoms/buttons/primary_button.dart';
 import 'package:culero/components/atoms/card/active_card.dart';
-import 'package:culero/utils/color.dart';
 import 'package:culero/utils/font_size.dart';
 
 import '../atoms/text/body_text.dart';
@@ -84,7 +83,8 @@ class ProfileDetailCard extends StatelessWidget {
                       padding: const EdgeInsets.only(bottom: 32),
                       child: PrimaryButton(
                         text: "Connection",
-                        titleColor: secondaryBg,
+                        titleColor: Theme.of(context).colorScheme.primary,
+                        color:  Theme.of(context).colorScheme.onPrimary,
                         onPressed: () {},
                         size: ButtonSize.sm,
                       ),

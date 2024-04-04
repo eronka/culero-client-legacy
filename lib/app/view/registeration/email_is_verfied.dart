@@ -34,8 +34,8 @@ class EmailIsVerfied extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Row(
                 mainAxisAlignment: isMobile(mediaQuery) ? MainAxisAlignment.center : MainAxisAlignment.start,
-                children: const [
-                  HeadingText(text: "CULERO", fontSize: 25, fontColor: primaryBg),
+                children:  [
+                  HeadingText(text: "CULERO", fontSize: 25, fontColor: Theme.of(context).colorScheme.primary),
                 ],
               ),
             ),
@@ -63,7 +63,7 @@ class EmailIsVerfied extends StatelessWidget {
                         style: TextButton.styleFrom(
                           minimumSize: const Size(573, 60),
                           foregroundColor: textColor,
-                          backgroundColor: primaryBg,
+                          backgroundColor: Theme.of(context).colorScheme.primary,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
                           ),

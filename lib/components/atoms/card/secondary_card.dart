@@ -1,3 +1,4 @@
+import 'package:culero/app/resources/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:culero/utils/color.dart';
 
@@ -27,9 +28,9 @@ class SecondaryCard extends StatelessWidget {
       height: height,
       padding: padding,
       decoration: BoxDecoration(
-        color: color ?? secondaryCardBg,
+        color: color ?? AppColor.white,
         borderRadius: BorderRadius.circular(15),
-        border: border ? Border.all(color: borderColor ?? cardBorderColor, width: 1) : null,
+        border: border ? Border.all(color: borderColor ?? Theme.of(context).colorScheme.primary, width: 1) : null,
       ),
       child: child,
     );

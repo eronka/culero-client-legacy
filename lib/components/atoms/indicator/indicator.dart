@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:culero/utils/color.dart';
+
 
 class Indicator extends StatelessWidget {
   final double? value;
-  final Color color;
+  final Color? color;
   final Color backgroundColor;
   final double? height;
   final BorderRadius borderRadius;
   const Indicator({
     super.key,
-    this.color = primaryBg,
+    this.color,
     this.backgroundColor= Colors.white,
     this.height,
     this.value,
@@ -24,7 +24,7 @@ class Indicator extends StatelessWidget {
 
 
       backgroundColor: backgroundColor,
-      valueColor: AlwaysStoppedAnimation<Color>(color),
+      valueColor: AlwaysStoppedAnimation<Color>(color ?? Theme.of(context).colorScheme.secondary),
       borderRadius: borderRadius,
     );
   }

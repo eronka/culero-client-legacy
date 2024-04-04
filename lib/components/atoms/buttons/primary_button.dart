@@ -2,14 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:culero/utils/color.dart';
 
+import '../../../app/resources/app_colors.dart';
 import 'button_config.dart';
 
 class PrimaryButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
-  final Color color;
-  final Color titleColor;
+  final Color? color;
+  final Color? titleColor;
   final ButtonSize size;
+  final double? width;
 
   final double radius;
 
@@ -17,7 +19,8 @@ class PrimaryButton extends StatelessWidget {
     super.key,
     required this.text,
     required this.onPressed,
-    this.color = primaryBg,
+    this.color,
+    this.width,
     this.titleColor = textColor,
     this.size = ButtonSize.md,
     this.radius = ButtonRadius.medium,
@@ -57,9 +60,9 @@ class PrimaryButton extends StatelessWidget {
     return TextButton(
       onPressed: onPressed,
       style: TextButton.styleFrom(
-        maximumSize: Size.fromHeight(_buttonHeight(size)),
-        foregroundColor: titleColor,
-        backgroundColor: color,
+        fixedSize: width != null ? Size(width!, _buttonHeight(size)) : Size.fromHeight(_buttonHeight(size)),
+        foregroundColor: titleColor ?? AppColor.black,
+        backgroundColor: color ?? Theme.of(context).colorScheme.primary,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(radius),
         ),
@@ -68,7 +71,7 @@ class PrimaryButton extends StatelessWidget {
       child: Text(
         text,
         style: GoogleFonts.inter(
-          textStyle: _titleStyle(titleColor, size),
+          textStyle: _titleStyle(titleColor ?? AppColor.black, size),
         ),
       ),
     );

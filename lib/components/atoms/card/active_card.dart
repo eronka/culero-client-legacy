@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:culero/utils/color.dart';
 
 class ActiveCard extends StatelessWidget {
   final Widget child;
@@ -17,9 +16,9 @@ class ActiveCard extends StatelessWidget {
     return Container(
       padding:padding ,
       decoration: BoxDecoration(
-        color: activeCardBg,
+        color:  Theme.of(context).colorScheme.primary,
         borderRadius: BorderRadius.circular(15),
-        border: border ? Border.all(color: cardBorderColor, width: 1) : null,
+        border: border ? Border.all(color:  Theme.of(context).colorScheme.primary, width: 1) : null,
       ),
 
       child: child,

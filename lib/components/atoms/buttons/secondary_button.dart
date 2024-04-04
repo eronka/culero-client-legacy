@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:culero/utils/color.dart';
 
+import '../../../app/resources/app_colors.dart';
 import 'button_config.dart';
 
 class SecondaryButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
-  final Color borderColor;
-  final Color titleColor;
+
+  final Color? titleColor;
   final ButtonSize size;
 
   final double radius;
@@ -17,8 +18,8 @@ class SecondaryButton extends StatelessWidget {
     super.key,
     required this.text,
     required this.onPressed,
-    this.borderColor = primaryBg,
-    this.titleColor = textColor,
+
+    this.titleColor,
     this.size = ButtonSize.md,
     this.radius = ButtonRadius.medium,
   });
@@ -58,10 +59,10 @@ class SecondaryButton extends StatelessWidget {
         onPressed: onPressed,
         style: TextButton.styleFrom(
             fixedSize: Size.fromHeight(_buttonHeight(size)),
-          foregroundColor: titleColor,
+          foregroundColor: titleColor ?? AppColor.black,
           backgroundColor: Colors
               .transparent,
-          side: BorderSide(color: borderColor),
+          side: BorderSide(color: Theme.of(context).colorScheme.primary),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(radius),
           ),
@@ -70,7 +71,7 @@ class SecondaryButton extends StatelessWidget {
         child: Text(
           text,
           style: GoogleFonts.inter(
-            textStyle: _titleStyle(titleColor, size),
+            textStyle: _titleStyle(titleColor ?? AppColor.black, size),
           ),
         ),
 

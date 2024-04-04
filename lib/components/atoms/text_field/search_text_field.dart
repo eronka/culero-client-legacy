@@ -1,10 +1,11 @@
+import 'package:culero/app/resources/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:culero/utils/color.dart';
 import 'package:culero/utils/font_size.dart';
 
 
 class SearchTextField extends StatelessWidget {
-  final Color backgroundColor;
+  final Color? backgroundColor;
   final String hintText;
   final TextEditingController controller;
   final VoidCallback? onTap;
@@ -17,7 +18,7 @@ class SearchTextField extends StatelessWidget {
     super.key,
     required this.controller,
     required this.hintText,
-    this.backgroundColor = searchTextFieldBgColor,
+    this.backgroundColor,
     this.onTap,
     this.onChanged,
     this.onSubmitted,
@@ -30,11 +31,11 @@ class SearchTextField extends StatelessWidget {
     return SearchBar(
       hintText: hintText,
       trailing: trailing,
-      side: const MaterialStatePropertyAll<BorderSide>(BorderSide(color: primaryBg)),
+      side:  MaterialStatePropertyAll<BorderSide>(BorderSide(color: Theme.of(context).colorScheme.primary)),
       elevation: const MaterialStatePropertyAll<double>(0),
       textStyle: const MaterialStatePropertyAll<TextStyle>(TextStyle(fontSize: FontSizes.h4)),
       hintStyle: const MaterialStatePropertyAll<TextStyle>(TextStyle(fontStyle: FontStyle.italic, fontSize: FontSizes.h4, color: placehoderText)),
-      backgroundColor: MaterialStatePropertyAll<Color>(backgroundColor),
+      backgroundColor: MaterialStatePropertyAll<Color>(backgroundColor ?? AppColor.white),
       padding: const MaterialStatePropertyAll<EdgeInsets>(EdgeInsets.symmetric(horizontal: 16.0)),
       leading: const Icon(Icons.search, color: placehoderText),
       onTap: onTap,

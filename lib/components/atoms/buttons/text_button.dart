@@ -7,7 +7,7 @@ import 'button_config.dart';
 class TextButtonAtm extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
-  final Color borderColor;
+
   final Color titleColor;
   final ButtonSize size;
 
@@ -17,7 +17,7 @@ class TextButtonAtm extends StatelessWidget {
     super.key,
     required this.text,
     required this.onPressed,
-    this.borderColor = primaryBg,
+
     this.titleColor = textColor,
     this.size = ButtonSize.md,
     this.radius = ButtonRadius.medium,

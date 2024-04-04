@@ -25,4 +25,5 @@ ColorScheme get appColorScheme => ColorScheme.light(
       secondaryContainer: AppColor.white,
       onSecondaryContainer: AppColor.darkGrey,
       scrim: AppColor.darkGrey,
+      
     );

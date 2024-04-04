@@ -1,3 +1,4 @@
+import 'package:culero/app/resources/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:culero/utils/color.dart';
@@ -7,8 +8,8 @@ import 'button_config.dart';
 class ActiveButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
-  final Color color;
-  final Color titleColor;
+  final Color? color;
+  final Color? titleColor;
   final ButtonSize size;
   final double? width;
 
@@ -18,8 +19,8 @@ class ActiveButton extends StatelessWidget {
     super.key,
     required this.text,
     required this.onPressed,
-    this.color = secondaryBg,
-    this.titleColor = Colors.white,
+    this.color,
+    this.titleColor ,
     this.size = ButtonSize.md,
     this.radius = ButtonRadius.medium,
     this.width,
@@ -60,8 +61,8 @@ class ActiveButton extends StatelessWidget {
       onPressed: onPressed,
       style: TextButton.styleFrom(
         fixedSize: width != null ? Size(width!, _buttonHeight(size)) : Size.fromHeight(_buttonHeight(size)),
-        foregroundColor: titleColor,
-        backgroundColor: color,
+        foregroundColor: titleColor ?? AppColor.black,
+        backgroundColor: color ?? Theme.of(context).colorScheme.secondary,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(radius),
         ),
@@ -70,7 +71,7 @@ class ActiveButton extends StatelessWidget {
       child: Text(
         text,
         style: GoogleFonts.inter(
-          textStyle: _titleStyle(titleColor, size),
+          textStyle: _titleStyle(titleColor ?? AppColor.black, size),
         ),
       ),
     );

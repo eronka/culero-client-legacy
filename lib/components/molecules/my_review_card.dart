@@ -55,9 +55,9 @@ class MyReviewCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: List.generate(
                       data['star_rating'],
-                      (index) => const Padding(
-                        padding: EdgeInsets.all(2.0),
-                        child: Icon(Icons.star_rate, color: primaryBg),
+                      (index) => Padding(
+                        padding: const EdgeInsets.all(2.0),
+                        child: Icon(Icons.star_rate, color: Theme.of(context).colorScheme.secondary),
                       ),
                     ),
                   ),

@@ -1,3 +1,4 @@
+import 'package:culero/app/navigation/app_routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
@@ -34,8 +35,8 @@ class VerfyYourEmail extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Row(
                 mainAxisAlignment: isMobile(mediaQuery) ? MainAxisAlignment.center : MainAxisAlignment.start,
-                children: const [
-                  HeadingText(text: "CULERO", fontSize: 25, fontColor: primaryBg),
+                children:  [
+                  HeadingText(text: "CULERO", fontSize: 25, fontColor: Theme.of(context).colorScheme.primary),
                 ],
               ),
             ),
@@ -82,11 +83,11 @@ mainAxisAlignment:isMobile(mediaQuery)? MainAxisAlignment.start : MainAxisAlignm
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: TextButton(
-                        onPressed: () => context.go("/emailverified"),
+                        onPressed: () => context.go(AppRoute.emailverified.path),
                         style: TextButton.styleFrom(
                           minimumSize: const Size(573, 60),
                           foregroundColor: textColor,
-                          backgroundColor: primaryBg,
+                          backgroundColor: Theme.of(context).colorScheme.primary,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
                           ),

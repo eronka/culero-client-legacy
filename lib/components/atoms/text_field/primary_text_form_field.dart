@@ -1,3 +1,4 @@
+import 'package:culero/app/resources/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:culero/utils/color.dart';
 import 'package:culero/utils/font_size.dart';
@@ -32,7 +33,7 @@ final int? maxLength ;
       style: const TextStyle(fontSize: FontSizes.h4),
       decoration: InputDecoration(
         filled: true,
-        fillColor: bgColor,
+        fillColor: AppColor.lightGrey,
         isDense: true,
         hintText: hintText,
         hintStyle: const TextStyle(
@@ -42,8 +43,8 @@ final int? maxLength ;
         ),
         contentPadding: const EdgeInsets.all(18),
         border: const OutlineInputBorder(borderSide: BorderSide.none),
-        focusedBorder: const OutlineInputBorder(borderSide: BorderSide(color: primaryBg)),
-        errorBorder: const OutlineInputBorder(borderSide: BorderSide(color: Colors.red)),
+        focusedBorder:  OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary)),
+        errorBorder:  OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.error)),
         counterText: "",
       ),
       onChanged: onChanged,

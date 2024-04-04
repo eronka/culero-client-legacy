@@ -20,9 +20,9 @@ class PrimaryCard extends StatelessWidget {
       padding:padding ,
 
       decoration: BoxDecoration(
-        color: primaryCardBg,
+        color: Theme.of(context).colorScheme.background,
         borderRadius: BorderRadius.circular(15),
-        border: border ? Border.all(color: cardBorderColor, width: 1) : null,
+        border: border ? Border.all(color: Theme.of(context).colorScheme.primary, width: 1) : null,
 
       ),
         child:child,
