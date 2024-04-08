@@ -18,6 +18,16 @@ import 'package:culero/molecules/review.dart';
 import 'package:culero/molecules/rating.dart';
 import 'package:culero/molecules/my_review.dart';
 import 'package:culero/utils/font_size.dart';
+// // Background Colors
+// const bgColor = Color.fromRGBO(217, 217, 217, 1);
+// const Theme.of(context).colorScheme.primary = Color(0xFFA1C0FF);
+// const Theme.of(context).colorScheme.secondary = Color(0xFF2798EA);
+
+// // Card Colors
+// const cardBorderColor = Color.fromRGBO(57, 122, 255, 1);
+// const primaryCardBg = Color.fromRGBO(236, 243, 255, 1);
+// const secondaryCardBg = Colors.white;
+// const activeCardBg = Color.fromRGBO(57, 122, 255, 1);
 
 final controller = TextEditingController();
 final controller2 = TextEditingController();

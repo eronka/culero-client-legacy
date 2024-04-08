@@ -4,6 +4,7 @@ import 'package:culero/utils/color.dart';
 
 import 'button_config.dart';
 
+// Button has no background and borders.
 class TextButtonAtm extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;

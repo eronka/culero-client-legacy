@@ -1,6 +1,11 @@
 
 import 'package:flutter/material.dart';
 
+
+
+// This card has background color from theme and it  can  not be changed and it has
+// border fo primary color and it also can not be changed
+
 class PrimaryCard extends StatelessWidget {
   final Widget child;
   final EdgeInsets padding;

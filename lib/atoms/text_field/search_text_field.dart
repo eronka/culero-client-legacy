@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:culero/utils/color.dart';
 import 'package:culero/utils/font_size.dart';
 
-
+// This is search bar text field.
 class SearchTextField extends StatelessWidget {
   final Color? backgroundColor;
   final String hintText;

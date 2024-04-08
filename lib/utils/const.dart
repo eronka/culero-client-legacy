@@ -1,3 +1,5 @@
+// Standard scree width for responsive design
+
 const double mobile = 600;
 
 const double tablet = 960;

@@ -4,6 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'button_config.dart';
 
+// Button has secondary color as background color and can be changed.
+
 class ActiveButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;

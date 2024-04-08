@@ -4,6 +4,7 @@ import 'package:culero/atoms/text/body_text.dart';
 import 'package:culero/atoms/text/heading_text.dart';
 import 'package:culero/utils/font_size.dart';
 
+// This is connection widget
 class Connection extends StatelessWidget {
   final Map<String, String> data;
   const Connection({super.key, required this.data});

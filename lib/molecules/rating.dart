@@ -6,11 +6,7 @@ import 'package:culero/atoms/indicator/indicator.dart';
 import 'package:culero/utils/color.dart';
 import 'package:culero/utils/font_size.dart';
 
-// "over_all": 4.6,
-// "Professionalism": 4.4,
-// "Reliability": 4.2,
-// "Communication": 4.9,
-
+// This is Rating card
 class Rating extends StatelessWidget {
   final Map<String, double> data;
   const Rating({super.key, required this.data});

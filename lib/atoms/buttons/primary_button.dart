@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:culero/utils/color.dart';
 
 import '../../app/resources/app_colors.dart';
 import 'button_config.dart';
 
+// Button has primary background color
 class PrimaryButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
@@ -21,7 +21,7 @@ class PrimaryButton extends StatelessWidget {
     required this.onPressed,
     this.color,
     this.width,
-    this.titleColor = textColor,
+    this.titleColor,
     this.size = ButtonSize.md,
     this.radius = ButtonRadius.medium,
   });
@@ -42,16 +42,20 @@ class PrimaryButton extends StatelessWidget {
   TextStyle _titleStyle(Color titleColor, ButtonSize size) {
     switch (size) {
       case ButtonSize.sm:
-        return TextStyle(fontWeight: FontWeight.w300, color: titleColor, fontSize: 14);
+        return TextStyle(
+            fontWeight: FontWeight.w300, color: titleColor, fontSize: 14);
 
       case ButtonSize.md:
-        return TextStyle(fontWeight: FontWeight.w400, color: titleColor, fontSize: 18);
+        return TextStyle(
+            fontWeight: FontWeight.w400, color: titleColor, fontSize: 18);
 
       case ButtonSize.lg:
-        return TextStyle(fontWeight: FontWeight.w500, color: titleColor, fontSize: 20);
+        return TextStyle(
+            fontWeight: FontWeight.w500, color: titleColor, fontSize: 20);
 
       default:
-        return TextStyle(fontWeight: FontWeight.w400, color: titleColor, fontSize: 18);
+        return TextStyle(
+            fontWeight: FontWeight.w400, color: titleColor, fontSize: 18);
     }
   }
 
@@ -60,7 +64,9 @@ class PrimaryButton extends StatelessWidget {
     return TextButton(
       onPressed: onPressed,
       style: TextButton.styleFrom(
-        fixedSize: width != null ? Size(width!, _buttonHeight(size)) : Size.fromHeight(_buttonHeight(size)),
+        fixedSize: width != null
+            ? Size(width!, _buttonHeight(size))
+            : Size.fromHeight(_buttonHeight(size)),
         foregroundColor: titleColor ?? AppColor.black,
         backgroundColor: color ?? Theme.of(context).colorScheme.primary,
         shape: RoundedRectangleBorder(

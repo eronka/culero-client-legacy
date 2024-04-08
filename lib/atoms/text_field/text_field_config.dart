@@ -1,3 +1,5 @@
+
+// Radius values as per figma.
 class TextFieldBorderRadius {
   static const full = 50.00;
   static const medium = 10.00;

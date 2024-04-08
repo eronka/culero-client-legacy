@@ -1,3 +1,4 @@
+// Font size as per figma design.
 class FontSizes {
   static const double h1 = 30.00;
   static const double h2 = 24.00;

@@ -4,6 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../app/resources/app_colors.dart';
 import 'button_config.dart';
 
+
+// Button has borders of primary color and background of transperant.
 class SecondaryButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;

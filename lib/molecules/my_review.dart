@@ -4,7 +4,7 @@ import 'package:culero/atoms/indicator/indicator.dart';
 import 'package:culero/atoms/text/heading_text.dart';
 import 'package:culero/utils/color.dart';
 import 'package:culero/utils/font_size.dart';
-
+// This is My Review widget
 class MyReview extends StatelessWidget {
   final Map<String, dynamic> data;
   const MyReview({super.key, required this.data});

@@ -3,6 +3,8 @@ import 'package:culero/utils/color.dart';
 import 'package:culero/utils/font_size.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+
+// Body text as name suggest it is used in body or paragraph.
 class BodyText extends StatelessWidget {
   final String text;
   final double fontSize;

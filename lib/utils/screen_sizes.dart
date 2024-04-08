@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:culero/utils/const.dart';
 
+// helper function to check device according to screen width.
+
+
 bool isMobile(MediaQueryData mediaQueryData) {
   return mediaQueryData.size.width < mobile;
 }

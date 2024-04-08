@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 
+// This is linear indictor background color , value color and height can be changed 
+
 class Indicator extends StatelessWidget {
   final double? value;
   final Color? color;

@@ -7,6 +7,7 @@ import 'package:culero/utils/font_size.dart';
 import '../atoms/text/body_text.dart';
 import '../atoms/text/heading_text.dart';
 
+// This is Profile detail widget
 class ProfileDetail extends StatelessWidget {
   final Map<String, String> data;
   const ProfileDetail({

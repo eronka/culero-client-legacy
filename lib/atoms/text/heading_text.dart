@@ -3,6 +3,8 @@ import 'package:culero/utils/color.dart';
 import 'package:culero/utils/font_size.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+
+// Heading text it can be used as title.
 class HeadingText extends StatelessWidget {
   final String text;
   final double fontSize;

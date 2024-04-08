@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:culero/utils/color.dart';
 import 'package:culero/utils/font_size.dart';
 
+
+// This is simple filled text form field.
 class PrimaryTextFormField extends StatelessWidget {
   final TextEditingController? controller;
   final String hintText;

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:culero/atoms/text/heading_text.dart';
 import 'package:culero/utils/color.dart';
 import 'package:culero/utils/font_size.dart';
-
+// This is Latest Review widget
 class LatestReview extends StatelessWidget {
   final Map<String, dynamic> data;
   const LatestReview({super.key, required this.data});

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+// Card has primary color backgound and border as well.
+
 class ActiveCard extends StatelessWidget {
   final Widget child;
   final EdgeInsets padding;
