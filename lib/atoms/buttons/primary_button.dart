@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:culero/utils/color.dart';
 
-import '../../../app/resources/app_colors.dart';
+import '../../app/resources/app_colors.dart';
 import 'button_config.dart';
 
 class PrimaryButton extends StatelessWidget {

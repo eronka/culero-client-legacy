@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:culero/components/atoms/card/secondary_card.dart';
-import 'package:culero/components/atoms/indicator/indicator.dart';
-import 'package:culero/components/atoms/text/heading_text.dart';
+import 'package:culero/atoms/card/secondary_card.dart';
+import 'package:culero/atoms/indicator/indicator.dart';
+import 'package:culero/atoms/text/heading_text.dart';
 import 'package:culero/utils/color.dart';
 import 'package:culero/utils/font_size.dart';
 
-class MyReviewCard extends StatelessWidget {
+class MyReview extends StatelessWidget {
   final Map<String, dynamic> data;
-  const MyReviewCard({super.key, required this.data});
+  const MyReview({super.key, required this.data});
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +57,8 @@ class MyReviewCard extends StatelessWidget {
                       data['star_rating'],
                       (index) => Padding(
                         padding: const EdgeInsets.all(2.0),
-                        child: Icon(Icons.star_rate, color: Theme.of(context).colorScheme.secondary),
+                        child: Icon(Icons.star_rate,
+                            color: Theme.of(context).colorScheme.secondary),
                       ),
                     ),
                   ),
@@ -74,15 +75,24 @@ class MyReviewCard extends StatelessWidget {
                 children: [
                   Padding(
                     padding: EdgeInsets.all(8.0),
-                    child: HeadingText(text: "Professionalism", fontSize: FontSizes.h5, fontColor: bodyText2),
+                    child: HeadingText(
+                        text: "Professionalism",
+                        fontSize: FontSizes.h5,
+                        fontColor: bodyText2),
                   ),
                   Padding(
                     padding: EdgeInsets.all(8.0),
-                    child: HeadingText(text: "Reliability", fontSize: FontSizes.h5, fontColor: bodyText2),
+                    child: HeadingText(
+                        text: "Reliability",
+                        fontSize: FontSizes.h5,
+                        fontColor: bodyText2),
                   ),
                   Padding(
                     padding: EdgeInsets.all(8.0),
-                    child: HeadingText(text: "Communication", fontSize: FontSizes.h5, fontColor: bodyText2),
+                    child: HeadingText(
+                        text: "Communication",
+                        fontSize: FontSizes.h5,
+                        fontColor: bodyText2),
                   ),
                 ],
               ),

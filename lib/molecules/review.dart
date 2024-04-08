@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:culero/components/atoms/card/secondary_card.dart';
-import 'package:culero/components/atoms/text/body_text.dart';
+import 'package:culero/atoms/card/secondary_card.dart';
+import 'package:culero/atoms/text/body_text.dart';
 import 'package:culero/utils/color.dart';
 import 'package:culero/utils/font_size.dart';
 
 import '../atoms/text/heading_text.dart';
 
-class ReviewCard extends StatelessWidget {
+class Review extends StatelessWidget {
   final Map<String, dynamic> data;
 
-  const ReviewCard({super.key, required this.data});
+  const Review({super.key, required this.data});
 
   @override
   Widget build(BuildContext context) {
     return SecondaryCard(
       border: false,
-
       padding: const EdgeInsets.all(16),
       child: Column(
         children: [
@@ -66,7 +65,7 @@ class ReviewCard extends StatelessWidget {
                           Row(
                             children: List.generate(
                               data['star_rating'],
-                              (index) =>  Padding(
+                              (index) => Padding(
                                 padding: const EdgeInsets.all(2.0),
                                 child: Icon(
                                   Icons.star_rate,
@@ -115,7 +114,7 @@ class ReviewCard extends StatelessWidget {
             ],
           ),
           const Divider(),
-           Padding(
+          Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,

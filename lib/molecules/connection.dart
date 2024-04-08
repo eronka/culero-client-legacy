@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:culero/components/atoms/card/secondary_card.dart';
-import 'package:culero/components/atoms/text/body_text.dart';
-import 'package:culero/components/atoms/text/heading_text.dart';
+import 'package:culero/atoms/card/secondary_card.dart';
+import 'package:culero/atoms/text/body_text.dart';
+import 'package:culero/atoms/text/heading_text.dart';
 import 'package:culero/utils/font_size.dart';
 
-
-class ConnectionListTile extends StatelessWidget {
+class Connection extends StatelessWidget {
   final Map<String, String> data;
-  const ConnectionListTile({super.key, required this.data});
+  const Connection({super.key, required this.data});
 
   @override
   Widget build(BuildContext context) {
@@ -29,10 +28,16 @@ class ConnectionListTile extends StatelessWidget {
                       backgroundImage: NetworkImage(data['avatar']!),
                     ),
                   ),
-                   Positioned(left: 75, top: 70, child: Image.asset("assets/images/green-tick.png", height: 30,)),
+                  Positioned(
+                      left: 75,
+                      top: 70,
+                      child: Image.asset(
+                        "assets/images/green-tick.png",
+                        height: 30,
+                      )),
                 ],
               ),
-               Padding(
+              Padding(
                 padding: const EdgeInsets.all(18.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -40,7 +45,7 @@ class ConnectionListTile extends StatelessWidget {
                   children: [
                     HeadingText(text: data["name"]!),
                     BodyText(
-                      text:data["title"]!,
+                      text: data["title"]!,
                       fontSize: FontSizes.p3,
                     )
                   ],
@@ -56,7 +61,9 @@ class ConnectionListTile extends StatelessWidget {
                 padding: const EdgeInsets.only(right: 32),
                 child: Column(
                   children: [
-                    IconButton(onPressed: () {}, icon: const Icon(Icons.message_outlined)),
+                    IconButton(
+                        onPressed: () {},
+                        icon: const Icon(Icons.message_outlined)),
                     const BodyText(text: "Write review"),
                   ],
                 ),
@@ -66,7 +73,9 @@ class ConnectionListTile extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(18.0),
-                    child: IconButton(onPressed: () {}, icon: const Icon(Icons.more_horiz_outlined)),
+                    child: IconButton(
+                        onPressed: () {},
+                        icon: const Icon(Icons.more_horiz_outlined)),
                   ),
                 ],
               )

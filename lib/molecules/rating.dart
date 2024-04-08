@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:culero/components/atoms/text/heading_text.dart';
-import 'package:culero/components/atoms/card/secondary_card.dart';
-import 'package:culero/components/atoms/indicator/indicator.dart';
+import 'package:culero/atoms/text/heading_text.dart';
+import 'package:culero/atoms/card/secondary_card.dart';
+import 'package:culero/atoms/indicator/indicator.dart';
 import 'package:culero/utils/color.dart';
 import 'package:culero/utils/font_size.dart';
 
@@ -11,9 +11,9 @@ import 'package:culero/utils/font_size.dart';
 // "Reliability": 4.2,
 // "Communication": 4.9,
 
-class RatingCard extends StatelessWidget {
+class Rating extends StatelessWidget {
   final Map<String, double> data;
-  const RatingCard({super.key, required this.data});
+  const Rating({super.key, required this.data});
 
   @override
   Widget build(BuildContext context) {

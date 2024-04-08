@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
-import 'package:culero/components/atoms/text/body_text.dart';
-import 'package:culero/components/atoms/text/heading_text.dart';
+import 'package:culero/atoms/text/body_text.dart';
+import 'package:culero/atoms/text/heading_text.dart';
 import 'package:culero/utils/color.dart';
 import 'package:culero/utils/font_size.dart';
 import 'package:culero/utils/screen_sizes.dart';

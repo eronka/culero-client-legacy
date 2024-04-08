@@ -1,10 +1,10 @@
 import 'package:culero/app/navigation/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
-import 'package:culero/components/atoms/indicator/indicator.dart';
-import 'package:culero/components/atoms/text/body_text.dart';
-import 'package:culero/components/atoms/text/heading_text.dart';
-import 'package:culero/components/atoms/text_field/primary_text_form_field.dart';
+import 'package:culero/atoms/indicator/indicator.dart';
+import 'package:culero/atoms/text/body_text.dart';
+import 'package:culero/atoms/text/heading_text.dart';
+import 'package:culero/atoms/text_field/primary_text_form_field.dart';
 import 'package:culero/utils/color.dart';
 import 'package:culero/utils/font_size.dart';
 import 'package:culero/utils/screen_sizes.dart';

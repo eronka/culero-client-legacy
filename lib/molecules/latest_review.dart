@@ -1,12 +1,12 @@
 import 'package:culero/app/resources/app_colors.dart';
 import 'package:flutter/material.dart';
-import 'package:culero/components/atoms/text/heading_text.dart';
+import 'package:culero/atoms/text/heading_text.dart';
 import 'package:culero/utils/color.dart';
 import 'package:culero/utils/font_size.dart';
 
-class LatestReviewItem extends StatelessWidget {
+class LatestReview extends StatelessWidget {
   final Map<String, dynamic> data;
-  const LatestReviewItem({super.key, required this.data});
+  const LatestReview({super.key, required this.data});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,9 @@ class LatestReviewItem extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              IconButton(onPressed: () {}, icon: const Icon(Icons.more_horiz, color: AppColor.neutral)),
+              IconButton(
+                  onPressed: () {},
+                  icon: const Icon(Icons.more_horiz, color: AppColor.neutral)),
             ],
           ),
           Padding(
@@ -38,9 +40,10 @@ class LatestReviewItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: List.generate(
               data['star_rating'],
-              (index) =>  Padding(
+              (index) => Padding(
                 padding: const EdgeInsets.all(2.0),
-                child: Icon(Icons.star_rate, color: Theme.of(context).colorScheme.primary),
+                child: Icon(Icons.star_rate,
+                    color: Theme.of(context).colorScheme.primary),
               ),
             ),
           ),
@@ -56,15 +59,24 @@ class LatestReviewItem extends StatelessWidget {
                   children: [
                     Padding(
                       padding: EdgeInsets.all(9.0),
-                      child: HeadingText(text: "Professionalism", fontSize: FontSizes.p2, fontColor: bodyText2),
+                      child: HeadingText(
+                          text: "Professionalism",
+                          fontSize: FontSizes.p2,
+                          fontColor: bodyText2),
                     ),
                     Padding(
                       padding: EdgeInsets.all(9.0),
-                      child: HeadingText(text: "Reliability", fontSize: FontSizes.p2, fontColor: bodyText2),
+                      child: HeadingText(
+                          text: "Reliability",
+                          fontSize: FontSizes.p2,
+                          fontColor: bodyText2),
                     ),
                     Padding(
                       padding: EdgeInsets.all(9.0),
-                      child: HeadingText(text: "Communication", fontSize: FontSizes.p2, fontColor: bodyText2),
+                      child: HeadingText(
+                          text: "Communication",
+                          fontSize: FontSizes.p2,
+                          fontColor: bodyText2),
                     ),
                   ],
                 ),

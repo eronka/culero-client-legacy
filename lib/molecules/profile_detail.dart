@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:culero/components/atoms/buttons/button_config.dart';
-import 'package:culero/components/atoms/buttons/primary_button.dart';
-import 'package:culero/components/atoms/card/active_card.dart';
+import 'package:culero/atoms/buttons/button_config.dart';
+import 'package:culero/atoms/buttons/primary_button.dart';
+import 'package:culero/atoms/card/active_card.dart';
 import 'package:culero/utils/font_size.dart';
 
 import '../atoms/text/body_text.dart';
 import '../atoms/text/heading_text.dart';
 
-class ProfileDetailCard extends StatelessWidget {
+class ProfileDetail extends StatelessWidget {
   final Map<String, String> data;
-  const ProfileDetailCard({
+  const ProfileDetail({
     super.key,
     required this.data,
   });
@@ -17,29 +17,35 @@ class ProfileDetailCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ActiveCard(
-      padding:  EdgeInsets.zero,
+      padding: EdgeInsets.zero,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-           Padding(
+          Padding(
             padding: const EdgeInsets.only(left: 32, right: 8, top: 16),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                  Stack(
-                alignment: Alignment.bottomRight,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: CircleAvatar(
-                      radius: 45,
-                      backgroundImage: NetworkImage(data['avatar']!),
+                Stack(
+                  alignment: Alignment.bottomRight,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: CircleAvatar(
+                        radius: 45,
+                        backgroundImage: NetworkImage(data['avatar']!),
+                      ),
                     ),
-                  ),
-                  Positioned(left: 75, top: 75, child: Image.asset("assets/images/green-tick.png", height: 25,)),
-                ],
-              ),
+                    Positioned(
+                        left: 75,
+                        top: 75,
+                        child: Image.asset(
+                          "assets/images/green-tick.png",
+                          height: 25,
+                        )),
+                  ],
+                ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 18),
                   child: Column(
@@ -84,12 +90,12 @@ class ProfileDetailCard extends StatelessWidget {
                       child: PrimaryButton(
                         text: "Connection",
                         titleColor: Theme.of(context).colorScheme.primary,
-                        color:  Theme.of(context).colorScheme.onPrimary,
+                        color: Theme.of(context).colorScheme.onPrimary,
                         onPressed: () {},
                         size: ButtonSize.sm,
                       ),
                     ),
-                     Row(
+                    Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Row(
@@ -124,7 +130,8 @@ class ProfileDetailCard extends StatelessWidget {
                                 ),
                               ),
                               HeadingText(
-                                text: "${data["total_connections"]!} Connections ",
+                                text:
+                                    "${data["total_connections"]!} Connections ",
                                 fontSize: FontSizes.p3,
                                 fontColor: Colors.white70,
                               )
