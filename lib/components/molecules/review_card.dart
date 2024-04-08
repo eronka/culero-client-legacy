@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:culero/components/atoms/card/secondary_card.dart';
 import 'package:culero/components/atoms/text/body_text.dart';
 import 'package:culero/utils/color.dart';
@@ -68,7 +67,7 @@ class ReviewCard extends StatelessWidget {
                             children: List.generate(
                               data['star_rating'],
                               (index) =>  Padding(
-                                padding: EdgeInsets.all(2.0),
+                                padding: const EdgeInsets.all(2.0),
                                 child: Icon(
                                   Icons.star_rate,
                                   size: 16,

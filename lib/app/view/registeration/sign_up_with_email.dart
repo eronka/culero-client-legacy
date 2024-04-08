@@ -1,10 +1,6 @@
 import 'package:culero/app/navigation/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:culero/components/atoms/buttons/primary_button.dart';
-import 'package:culero/components/atoms/buttons/secondary_button.dart';
 import 'package:culero/components/atoms/indicator/indicator.dart';
 import 'package:culero/components/atoms/text/body_text.dart';
 import 'package:culero/components/atoms/text/heading_text.dart';
@@ -14,9 +10,7 @@ import 'package:culero/utils/font_size.dart';
 import 'package:culero/utils/screen_sizes.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:iconify_flutter/iconify_flutter.dart';
 
-import 'package:colorful_iconify_flutter/icons/flat_color_icons.dart';
 
 final TextEditingController controllerEmail = TextEditingController();
 final TextEditingController controllerPass = TextEditingController();
@@ -211,7 +205,6 @@ class _SignUpWithEmailState extends State<SignUpWithEmail> {
                                   ..onTap = () {
                                     // Handle sign in action here
                                     // For example, you can navigate to the sign-in screen
-                                    print('Sign in tapped');
                                   },
                               ),
                             ],

@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:culero/components/atoms/card/secondary_card.dart';
 import 'package:culero/components/atoms/text/body_text.dart';

@@ -7,7 +7,6 @@ import 'package:culero/components/component_page.dart';
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-
 import '../view/home_page.dart';
 import 'app_routes.dart';
 
@@ -21,7 +20,10 @@ GoRouter routerConfig(RouterConfigRef ref) {
   return GoRouter(
     initialLocation: AppRoute.home.path,
     routes: [
-
+      GoRoute(
+        path: "/comp",
+        builder: (context, state) => const ComponentPage(),
+      ),
       GoRoute(
         path: AppRoute.home.path,
         builder: (context, state) => const HomePage(),

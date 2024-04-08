@@ -1,6 +1,5 @@
 import 'package:culero/app/resources/app_colors.dart';
 import 'package:flutter/material.dart';
-import 'package:culero/utils/color.dart';
 
 class SecondaryCard extends StatelessWidget {
   final Widget child;

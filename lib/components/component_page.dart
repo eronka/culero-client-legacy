@@ -17,7 +17,6 @@ import 'package:culero/components/molecules/profile_detail_card.dart';
 import 'package:culero/components/molecules/review_card.dart';
 import 'package:culero/components/molecules/rating_card.dart';
 import 'package:culero/components/molecules/my_review_card.dart';
-import 'package:culero/utils/color.dart';
 import 'package:culero/utils/font_size.dart';
 
 final controller = TextEditingController();

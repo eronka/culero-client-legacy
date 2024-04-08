@@ -39,7 +39,7 @@ class LatestReviewItem extends StatelessWidget {
             children: List.generate(
               data['star_rating'],
               (index) =>  Padding(
-                padding: EdgeInsets.all(2.0),
+                padding: const EdgeInsets.all(2.0),
                 child: Icon(Icons.star_rate, color: Theme.of(context).colorScheme.primary),
               ),
             ),

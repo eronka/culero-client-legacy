@@ -1,9 +1,6 @@
 import 'package:culero/app/navigation/app_routes.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:culero/components/atoms/buttons/primary_button.dart';
-import 'package:culero/components/atoms/buttons/secondary_button.dart';
 import 'package:culero/components/atoms/text/body_text.dart';
 import 'package:culero/components/atoms/text/heading_text.dart';
 import 'package:culero/components/atoms/text_field/primary_text_form_field.dart';
@@ -26,16 +23,24 @@ class MoreOptions extends StatelessWidget {
     final mediaQuery = MediaQuery.of(context);
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: isMobile(mediaQuery) ? 25 : 75, vertical: 25),
+        padding: EdgeInsets.symmetric(
+            horizontal: isMobile(mediaQuery) ? 25 : 75, vertical: 25),
         child: Column(
-          mainAxisAlignment:isMobile(mediaQuery)? MainAxisAlignment.start : MainAxisAlignment.center,
+          mainAxisAlignment: isMobile(mediaQuery)
+              ? MainAxisAlignment.start
+              : MainAxisAlignment.center,
           children: [
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Row(
-                mainAxisAlignment: isMobile(mediaQuery) ? MainAxisAlignment.center : MainAxisAlignment.start,
-                children:  [
-                  HeadingText(text: "CULERO", fontSize: 25, fontColor: Theme.of(context).colorScheme.primary),
+                mainAxisAlignment: isMobile(mediaQuery)
+                    ? MainAxisAlignment.center
+                    : MainAxisAlignment.start,
+                children: [
+                  HeadingText(
+                      text: "CULERO",
+                      fontSize: 25,
+                      fontColor: Theme.of(context).colorScheme.primary),
                 ],
               ),
             ),
@@ -46,121 +51,129 @@ class MoreOptions extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    HeadingText(text: "Create your account", fontSize: isMobile(mediaQuery) ? FontSizes.h3 : FontSizes.h1),
+                    HeadingText(
+                        text: "Create your account",
+                        fontSize:
+                            isMobile(mediaQuery) ? FontSizes.h3 : FontSizes.h1),
                     Padding(
-                      padding: EdgeInsets.symmetric(vertical: isMobile(mediaQuery) ? 20 : 25, horizontal: isMobile(mediaQuery) ? 25 : 0),
-                      child: BodyText(text: "Embark on a Journey of Professional Growth and Collaboration!", textAlign: TextAlign.center, fontSize: isMobile(mediaQuery) ? FontSizes.p1 : FontSizes.h5),
+                      padding: EdgeInsets.symmetric(
+                          vertical: isMobile(mediaQuery) ? 20 : 25,
+                          horizontal: isMobile(mediaQuery) ? 25 : 0),
+                      child: BodyText(
+                          text:
+                              "Embark on a Journey of Professional Growth and Collaboration!",
+                          textAlign: TextAlign.center,
+                          fontSize: isMobile(mediaQuery)
+                              ? FontSizes.p1
+                              : FontSizes.h5),
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8),
-                      child: Row(
-                        children: [
-                          TextButton.icon(
-                            icon: const Iconify(
-                              FlatColorIcons.google,
-                              size: 35,
-                            ),
-                            onPressed: () {},
-                            style: TextButton.styleFrom(
-                              minimumSize: isMobile(mediaQuery) ? const Size(363, 65) : const Size(573, 60),
-                              foregroundColor: textColor,
-                              backgroundColor: Colors.transparent,
-                              side: const BorderSide(color: Colors.black),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              elevation: 0,
-                            ),
-                            label: Text(
-                              "Continue with Google",
-                              style: GoogleFonts.inter(
-                                textStyle: const TextStyle(fontWeight: FontWeight.w500, color: bodyText1, fontSize: 20),
-                              ),
-                            ),
+                      child: TextButton.icon(
+                        icon: const Iconify(
+                          FlatColorIcons.google,
+                          size: 35,
+                        ),
+                        onPressed: () {},
+                        style: TextButton.styleFrom(
+                          fixedSize: const Size(573, 50),
+                          foregroundColor: textColor,
+                          backgroundColor: Colors.transparent,
+                          side: const BorderSide(color: Colors.black),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
                           ),
-                        ],
+                          elevation: 0,
+                        ),
+                        label: Text(
+                          "Continue with Google",
+                          style: GoogleFonts.inter(
+                            textStyle: const TextStyle(
+                                fontWeight: FontWeight.w500,
+                                color: bodyText1,
+                                fontSize: 20),
+                          ),
+                        ),
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8),
-                      child: Row(
-                        children: [
-                          TextButton(
-                            onPressed: () {},
-                            style: TextButton.styleFrom(
-                              minimumSize: isMobile(mediaQuery) ? const Size(363, 65) : const Size(573, 60),
-                              foregroundColor: textColor,
-                              backgroundColor: Colors.transparent,
-                              side: const BorderSide(color: Colors.black),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              elevation: 0,
-                            ),
-                            child: Text(
-                              "Continue with Apple",
-                              style: GoogleFonts.inter(
-                                textStyle: const TextStyle(fontWeight: FontWeight.w500, color: bodyText1, fontSize: 20),
-                              ),
-                            ),
+                      child: TextButton(
+                        onPressed: () {},
+                        style: TextButton.styleFrom(
+                          fixedSize: const Size(573, 50),
+                          foregroundColor: textColor,
+                          backgroundColor: Colors.transparent,
+                          side: const BorderSide(color: Colors.black),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
                           ),
-                        ],
+                          elevation: 0,
+                        ),
+                        child: Text(
+                          "Continue with Apple",
+                          style: GoogleFonts.inter(
+                            textStyle: const TextStyle(
+                                fontWeight: FontWeight.w500,
+                                color: bodyText1,
+                                fontSize: 20),
+                          ),
+                        ),
                       ),
                     ),
-                     Padding(
+                    Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8),
-                      child: Row(
-                        children: [
-                          TextButton(
-                            onPressed: () {},
-                            style: TextButton.styleFrom(
-                              minimumSize: isMobile(mediaQuery) ? const Size(363, 65) : const Size(573, 60),
-                              foregroundColor: textColor,
-                              backgroundColor: Colors.transparent,
-                              side: const BorderSide(color: Colors.black),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              elevation: 0,
-                            ),
-                            child: Text(
-                              "Continue with LinkedIn",
-                              style: GoogleFonts.inter(
-                                textStyle: const TextStyle(fontWeight: FontWeight.w500, color: bodyText1, fontSize: 20),
-                              ),
-                            ),
+                      child: TextButton(
+                        onPressed: () {},
+                        style: TextButton.styleFrom(
+                          fixedSize: const Size(573, 50),
+                          foregroundColor: textColor,
+                          backgroundColor: Colors.transparent,
+                          side: const BorderSide(color: Colors.black),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
                           ),
-                        ],
+                          elevation: 0,
+                        ),
+                        child: Text(
+                          "Continue with LinkedIn",
+                          style: GoogleFonts.inter(
+                            textStyle: const TextStyle(
+                                fontWeight: FontWeight.w500,
+                                color: bodyText1,
+                                fontSize: 20),
+                          ),
+                        ),
                       ),
                     ),
-                     Padding(
+                    Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8),
-                      child: Row(
-                        children: [
-                          TextButton(
-                            onPressed: () {},
-                            style: TextButton.styleFrom(
-                              minimumSize: isMobile(mediaQuery) ? const Size(363, 65) : const Size(573, 60),
-                              foregroundColor: textColor,
-                              backgroundColor: Colors.transparent,
-                              side: const BorderSide(color: Colors.black),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              elevation: 0,
-                            ),
-                            child: Text(
-                              "Continue with Facebook",
-                              style: GoogleFonts.inter(
-                                textStyle: const TextStyle(fontWeight: FontWeight.w500, color: bodyText1, fontSize: 20),
-                              ),
-                            ),
+                      child: TextButton(
+                        onPressed: () {},
+                        style: TextButton.styleFrom(
+                          fixedSize: const Size(573, 50),
+                          foregroundColor: textColor,
+                          backgroundColor: Colors.transparent,
+                          side: const BorderSide(color: Colors.black),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
                           ),
-                        ],
+                          elevation: 0,
+                        ),
+                        child: Text(
+                          "Continue with Facebook",
+                          style: GoogleFonts.inter(
+                            textStyle: const TextStyle(
+                                fontWeight: FontWeight.w500,
+                                color: bodyText1,
+                                fontSize: 20),
+                          ),
+                        ),
                       ),
                     ),
                     const Padding(
-                      padding: EdgeInsets.symmetric(vertical: 20, horizontal: 8),
+                      padding:
+                          EdgeInsets.symmetric(vertical: 20, horizontal: 8),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -185,7 +198,10 @@ class MoreOptions extends StatelessWidget {
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: PrimaryTextFormField(hintText: "Enter your email address", onChanged: (e) {}, controller: controller),
+                      child: PrimaryTextFormField(
+                          hintText: "Enter your email address",
+                          onChanged: (e) {},
+                          controller: controller),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -196,7 +212,8 @@ class MoreOptions extends StatelessWidget {
                         style: TextButton.styleFrom(
                           minimumSize: const Size(573, 60),
                           foregroundColor: textColor,
-                          backgroundColor: Theme.of(context).colorScheme.primary,
+                          backgroundColor:
+                              Theme.of(context).colorScheme.primary,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
                           ),
@@ -205,7 +222,10 @@ class MoreOptions extends StatelessWidget {
                         child: Text(
                           "Get Started",
                           style: GoogleFonts.inter(
-                            textStyle: const TextStyle(fontWeight: FontWeight.bold, color: bodyText1, fontSize: 20),
+                            textStyle: const TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: bodyText1,
+                                fontSize: 20),
                           ),
                         ),
                       ),
@@ -219,12 +239,22 @@ class MoreOptions extends StatelessWidget {
                           children: [
                             TextSpan(
                               text: 'Terms of Service',
-                              style: TextStyle(fontSize: isMobile(mediaQuery) ? FontSizes.p3 : FontSizes.p1, fontWeight: FontWeight.bold, fontStyle: FontStyle.italic),
+                              style: TextStyle(
+                                  fontSize: isMobile(mediaQuery)
+                                      ? FontSizes.p3
+                                      : FontSizes.p1,
+                                  fontWeight: FontWeight.bold,
+                                  fontStyle: FontStyle.italic),
                             ),
                             const TextSpan(text: ' and '),
                             TextSpan(
                               text: 'Privacy Policy',
-                              style: TextStyle(fontSize: isMobile(mediaQuery) ? FontSizes.p3 : FontSizes.p1, fontWeight: FontWeight.bold, fontStyle: FontStyle.italic),
+                              style: TextStyle(
+                                  fontSize: isMobile(mediaQuery)
+                                      ? FontSizes.p3
+                                      : FontSizes.p1,
+                                  fontWeight: FontWeight.bold,
+                                  fontStyle: FontStyle.italic),
                             ),
                             const TextSpan(text: '.'),
                           ],
@@ -245,7 +275,8 @@ class MoreOptions extends StatelessWidget {
                               text: 'Sign in',
                               style: const TextStyle(
                                 fontSize: FontSizes.p2, // Set text size to 17
-                                color: Colors.blue, // Change color to blue for the link
+                                color: Colors
+                                    .blue, // Change color to blue for the link
                                 fontWeight: FontWeight.bold,
                                 decoration: TextDecoration.underline,
                               ),
@@ -253,7 +284,6 @@ class MoreOptions extends StatelessWidget {
                                 ..onTap = () {
                                   // Handle sign in action here
                                   // For example, you can navigate to the sign-in screen
-                                  print('Sign in tapped');
                                 },
                             ),
                           ],

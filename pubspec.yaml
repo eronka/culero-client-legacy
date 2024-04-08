@@ -51,6 +51,7 @@ dependencies:
   firebase_auth: ^4.18.0
   cloud_firestore: ^4.15.10
 
+  colorful_iconify_flutter: any
 dev_dependencies:
   flutter_test:
     sdk: flutter
