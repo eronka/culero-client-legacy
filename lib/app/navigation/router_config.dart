@@ -6,7 +6,6 @@ import 'package:culero/app/view/registeration/verfy_your_email_address.dart';
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../view/home_page.dart';
 import 'app_routes.dart';
 
 part 'router_config.g.dart';
@@ -17,12 +16,8 @@ GoRouter routerConfig(RouterConfigRef ref) {
   // final authProvider = ref.watch(firebaseAuthStateChangesStreamProvider);
 
   return GoRouter(
-    initialLocation: AppRoute.home.path,
+    initialLocation: AppRoute.signup.path,
     routes: [
-      GoRoute(
-        path: AppRoute.home.path,
-        builder: (context, state) => const HomePage(),
-      ),
       GoRoute(
         path: AppRoute.signup.path,
         builder: (context, state) => const SignUp(),
