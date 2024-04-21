@@ -52,6 +52,8 @@ dependencies:
   cloud_firestore: ^4.15.10
 
   colorful_iconify_flutter: any
+  http: ^1.2.1
+  get_storage: ^2.1.1
 dev_dependencies:
   flutter_test:
     sdk: flutter
