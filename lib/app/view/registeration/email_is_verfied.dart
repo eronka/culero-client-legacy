@@ -1,3 +1,4 @@
+import 'package:culero/app/navigation/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'package:culero/atoms/text/body_text.dart';
@@ -5,6 +6,7 @@ import 'package:culero/atoms/text/heading_text.dart';
 import 'package:culero/utils/color.dart';
 import 'package:culero/utils/font_size.dart';
 import 'package:culero/utils/screen_sizes.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 
@@ -49,7 +51,9 @@ class EmailIsVerfied extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(top: 25,bottom: 20),
                       child: TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          context.go(AppRoute.home.path);
+                        },
                         style: TextButton.styleFrom(
                           minimumSize: const Size(573, 60),
                           foregroundColor: textColor,

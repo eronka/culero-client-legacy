@@ -109,8 +109,8 @@ class VerfyYourEmail extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           SizedBox(
-                              width: 50,
-                              height: 50,
+                              width: 72,
+                              height: 72,
                               child: Padding(
                                   padding: const EdgeInsets.all(5),
                                   child: PrimaryTextFormField(
@@ -121,8 +121,8 @@ class VerfyYourEmail extends StatelessWidget {
                                         controllerCodeOne.text = e;
                                       }))),
                           SizedBox(
-                              width: 50,
-                              height: 50,
+                              width: 72,
+                              height: 72,
                               child: Padding(
                                   padding: const EdgeInsets.all(5),
                                   child: PrimaryTextFormField(
@@ -133,8 +133,8 @@ class VerfyYourEmail extends StatelessWidget {
                                         controllerCodeTwo.text = e;
                                       }))),
                           SizedBox(
-                              width: 50,
-                              height: 50,
+                              width: 72,
+                              height: 72,
                               child: Padding(
                                   padding: const EdgeInsets.all(5),
                                   child: PrimaryTextFormField(
@@ -145,8 +145,8 @@ class VerfyYourEmail extends StatelessWidget {
                                         controllerCodeThree.text = e;
                                       }))),
                           SizedBox(
-                              width: 50,
-                              height: 50,
+                              width: 72,
+                              height: 72,
                               child: Padding(
                                   padding: const EdgeInsets.all(5),
                                   child: PrimaryTextFormField(
@@ -157,8 +157,8 @@ class VerfyYourEmail extends StatelessWidget {
                                         controllerCodeFour.text = e;
                                       }))),
                           SizedBox(
-                              width: 50,
-                              height: 50,
+                              width: 72,
+                              height: 72,
                               child: Padding(
                                   padding: const EdgeInsets.all(5),
                                   child: PrimaryTextFormField(
@@ -169,8 +169,8 @@ class VerfyYourEmail extends StatelessWidget {
                                         controllerCodeFive.text = e;
                                       }))),
                           SizedBox(
-                              width: 50,
-                              height: 50,
+                              width: 72,
+                              height: 72,
                               child: Padding(
                                   padding: const EdgeInsets.all(5),
                                   child: PrimaryTextFormField(
