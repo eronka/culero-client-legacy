@@ -282,8 +282,7 @@ class MoreOptions extends StatelessWidget {
                               ),
                               recognizer: TapGestureRecognizer()
                                 ..onTap = () {
-                                  // Handle sign in action here
-                                  // For example, you can navigate to the sign-in screen
+                                  context.go(AppRoute.login.path);
                                 },
                             ),
                           ],
