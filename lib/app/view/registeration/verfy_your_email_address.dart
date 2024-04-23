@@ -1,4 +1,5 @@
 import 'package:culero/app/navigation/app_routes.dart';
+import 'package:culero/app/provider/auth_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'package:culero/atoms/text/body_text.dart';
@@ -11,10 +12,19 @@ import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class VerfyYourEmail extends StatelessWidget {
-  const VerfyYourEmail({super.key});
+  final String email;
+  const VerfyYourEmail({super.key, required this.email});
 
   @override
   Widget build(BuildContext context) {
+    final TextEditingController controllerCodeOne = TextEditingController();
+    final TextEditingController controllerCodeTwo = TextEditingController();
+    final TextEditingController controllerCodeThree = TextEditingController();
+    final TextEditingController controllerCodeFour = TextEditingController();
+    final TextEditingController controllerCodeFive = TextEditingController();
+    final TextEditingController controllerCodeSix = TextEditingController();
+
+    AuthProvider authProvider = AuthProvider();
     final mediaQuery = MediaQuery.of(context);
     return Scaffold(
       body: Padding(
@@ -59,8 +69,7 @@ class VerfyYourEmail extends StatelessWidget {
                       child: Column(
                         children: [
                           BodyText(
-                              text:
-                                  "We've sent a verification code to Sarah.Harris24@gmail.com",
+                              text: "We've sent a verification code to $email",
                               textAlign: TextAlign.center,
                               fontSize: isMobile(mediaQuery)
                                   ? FontSizes.p1
@@ -105,53 +114,103 @@ class VerfyYourEmail extends StatelessWidget {
                               child: Padding(
                                   padding: const EdgeInsets.all(5),
                                   child: PrimaryTextFormField(
+                                      controller: controllerCodeOne,
                                       maxLength: 1,
                                       hintText: "",
-                                      onChanged: (e) {}))),
+                                      onChanged: (e) {
+                                        controllerCodeOne.text = e;
+                                      }))),
                           SizedBox(
                               width: 72,
                               height: 72,
                               child: Padding(
                                   padding: const EdgeInsets.all(5),
                                   child: PrimaryTextFormField(
+                                      controller: controllerCodeTwo,
                                       maxLength: 1,
                                       hintText: "",
-                                      onChanged: (e) {}))),
+                                      onChanged: (e) {
+                                        controllerCodeTwo.text = e;
+                                      }))),
                           SizedBox(
                               width: 72,
                               height: 72,
                               child: Padding(
                                   padding: const EdgeInsets.all(5),
                                   child: PrimaryTextFormField(
+                                      controller: controllerCodeThree,
                                       maxLength: 1,
                                       hintText: "",
-                                      onChanged: (e) {}))),
+                                      onChanged: (e) {
+                                        controllerCodeThree.text = e;
+                                      }))),
                           SizedBox(
                               width: 72,
                               height: 72,
                               child: Padding(
                                   padding: const EdgeInsets.all(5),
                                   child: PrimaryTextFormField(
+                                      controller: controllerCodeFour,
                                       maxLength: 1,
                                       hintText: "",
-                                      onChanged: (e) {}))),
+                                      onChanged: (e) {
+                                        controllerCodeFour.text = e;
+                                      }))),
                           SizedBox(
                               width: 72,
                               height: 72,
                               child: Padding(
                                   padding: const EdgeInsets.all(5),
                                   child: PrimaryTextFormField(
+                                      controller: controllerCodeFive,
                                       maxLength: 1,
                                       hintText: "",
-                                      onChanged: (e) {}))),
+                                      onChanged: (e) {
+                                        controllerCodeFive.text = e;
+                                      }))),
+                          SizedBox(
+                              width: 72,
+                              height: 72,
+                              child: Padding(
+                                  padding: const EdgeInsets.all(5),
+                                  child: PrimaryTextFormField(
+                                      controller: controllerCodeSix,
+                                      maxLength: 1,
+                                      hintText: "",
+                                      onChanged: (e) {
+                                        controllerCodeSix.text = e;
+                                      }))),
                         ],
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: TextButton(
-                        onPressed: () =>
-                            context.go(AppRoute.emailverified.path),
+                        onPressed: () async {
+                          final code = (controllerCodeOne.text +
+                                  controllerCodeTwo.text +
+                                  controllerCodeThree.text +
+                                  controllerCodeFour.text +
+                                  controllerCodeFive.text +
+                                  controllerCodeSix.text)
+                              .trim();
+                          try {
+                            final response = await authProvider.verifyEmail(
+                                email: email, code: code);
+                            if (response) {
+                              // ignore: use_build_context_synchronously
+                              context.go(AppRoute.emailverified.path);
+                            }
+                          } catch (e) {
+                            // ignore: use_build_context_synchronously
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text(e.toString()),
+                                backgroundColor: Colors.red,
+                              ),
+                            );
+                          }
+                        },
                         style: TextButton.styleFrom(
                           minimumSize: const Size(573, 60),
                           foregroundColor: textColor,

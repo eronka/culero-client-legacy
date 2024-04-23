@@ -1,4 +1,5 @@
 import 'package:culero/app/navigation/app_routes.dart';
+import 'package:culero/app/provider/auth_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'package:culero/atoms/indicator/indicator.dart';
@@ -11,37 +12,29 @@ import 'package:culero/utils/screen_sizes.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../provider/auth_provider.dart';
-
-final TextEditingController controllerEmail = TextEditingController();
-final TextEditingController controllerPass = TextEditingController();
-
-class SignUpWithEmail extends StatefulWidget {
-  const SignUpWithEmail({super.key});
+class SignInWithEmail extends StatefulWidget {
+  const SignInWithEmail({super.key});
 
   @override
-  State<SignUpWithEmail> createState() => _SignUpWithEmailState();
+  State<SignInWithEmail> createState() => _SignInWithEmailState();
 }
 
-class _SignUpWithEmailState extends State<SignUpWithEmail> {
+class _SignInWithEmailState extends State<SignInWithEmail> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-
-  AuthProvider authProvider = AuthProvider();
-
-  final _formKey = GlobalKey<FormState>();
-  String passWord = "";
-  @override
-  void dispose() {
-    controllerEmail.dispose();
-    controllerPass.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
+    final formKey = GlobalKey<FormState>();
+    final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+
+    AuthProvider authProvider = AuthProvider();
+
+    String passWord = "";
+
     return Scaffold(
+      key: scaffoldKey, // Assign the key here
       body: Padding(
         padding: EdgeInsets.symmetric(
             horizontal: isMobile(mediaQuery) ? 25 : 75, vertical: 25),
@@ -66,13 +59,13 @@ class _SignUpWithEmailState extends State<SignUpWithEmail> {
               child: SizedBox(
                 width: 582,
                 child: Form(
-                  key: _formKey,
+                  key: formKey,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       HeadingText(
-                          text: "Create your account",
+                          text: "Sign In",
                           fontSize: isMobile(mediaQuery)
                               ? FontSizes.h3
                               : FontSizes.h1),
@@ -92,7 +85,7 @@ class _SignUpWithEmailState extends State<SignUpWithEmail> {
                         padding: const EdgeInsets.all(8.0),
                         child: PrimaryTextFormField(
                           hintText: "Enter your email address",
-                          controller: controllerEmail,
+                          controller: emailController,
                           onChanged: (e) {
                             emailController.text = e;
                           },
@@ -114,7 +107,7 @@ class _SignUpWithEmailState extends State<SignUpWithEmail> {
                         padding: const EdgeInsets.all(8.0),
                         child: PrimaryTextFormField(
                           hintText: "Create a password ",
-                          controller: controllerPass,
+                          controller: passwordController,
                           validator: (value) {
                             if (value == null || value.isEmpty) {
                               return 'Please enter a password';
@@ -171,20 +164,15 @@ class _SignUpWithEmailState extends State<SignUpWithEmail> {
                             try {
                               final email = emailController.text.trim();
                               final password = passwordController.text.trim();
-                              final response = await authProvider.signUp(
-                                  email: email, password: password);
-                              if (response) {
-                                // ignore: use_build_context_synchronously
-                                context.go(
-                                    "${AppRoute.verifyemail.path}/${emailController.text.trim()}");
-                              }
-                            } catch (e) {
+                              await authProvider.signInUser(
+                                  context, email, password);
                               // ignore: use_build_context_synchronously
+                              context.go(AppRoute.home.path);
+                            } catch (e) {
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(
-                                  content: Text(e
-                                      .toString()
-                                      .replaceFirst('Exception:', '')),
+                                  content: Text(e.toString()),
+                                  backgroundColor: Colors.red,
                                 ),
                               );
                             }
@@ -200,7 +188,7 @@ class _SignUpWithEmailState extends State<SignUpWithEmail> {
                             elevation: 0,
                           ),
                           child: Text(
-                            "Get Started",
+                            "Sign In",
                             style: GoogleFonts.inter(
                               textStyle: const TextStyle(
                                   fontWeight: FontWeight.bold,
@@ -245,14 +233,14 @@ class _SignUpWithEmailState extends State<SignUpWithEmail> {
                         padding: const EdgeInsets.only(top: 30),
                         child: RichText(
                           text: TextSpan(
-                            text: 'Have an account already? ',
+                            text: 'Don\'t have an account? ',
                             style: const TextStyle(
                               fontSize: FontSizes.p2, // Set text size to 17
                               color: Colors.black, // Default text color
                             ),
                             children: [
                               TextSpan(
-                                text: 'Sign in',
+                                text: 'Sign Up',
                                 style: const TextStyle(
                                   fontSize: FontSizes.p2, // Set text size to 17
                                   color: Colors
@@ -262,7 +250,9 @@ class _SignUpWithEmailState extends State<SignUpWithEmail> {
                                 ),
                                 recognizer: TapGestureRecognizer()
                                   ..onTap = () {
-                                    context.go(AppRoute.login.path);
+                                    context.go(AppRoute.signup.path);
+                                    // Handle sign in action here
+                                    // For example, you can navigate to the sign-in screen
                                   },
                               ),
                             ],

@@ -1,6 +1,7 @@
 import 'firebase_options.dart';
 import 'app/navigation/router_config.dart';
 import 'app/resources/app_theme.dart';
+import 'package:get_storage/get_storage.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -12,6 +13,8 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
+  await GetStorage.init();
 
   runApp(
     const ProviderScope(

@@ -7,7 +7,7 @@ enum AppRoute {
   moreoptions("/signup/moreoptions"),
   signupemail("/signup/signupemail"),
 
-  verfyemail("/signup/verfyemail"),
+  verifyemail("/signup/verifyemail"),
   emailverified("/signup/emailverified"),
   home("/home"),
   ;
